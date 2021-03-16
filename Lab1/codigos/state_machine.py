@@ -87,7 +87,6 @@ class MoveInSpiralState(State):
         # Todo: add execution logic
         w = math.sqrt(math.pow(FORWARD_SPEED,2)+math.pow(SPIRAL_FACTOR,2))/self.raio
         agent.set_velocity(FORWARD_SPEED, w)
-        #agent.move()
 
 
 class GoBackState(State):
