@@ -1,0 +1,25 @@
+Algorithm = 'dijkstra'
+Compute time: mean: 0.1315138339996338, std: 0.0
+Cost: mean: 78.18376618407349, std: 0.0
+
+algorithm = 'greedy'
+Compute time: mean: 0.015625, std: 0.0
+Cost: mean: 135.32590180780448, std: 0.0
+
+algorithm = 'a_star'
+Compute time: mean: 0.05338644981384277, std: 0.0
+Cost: mean: 78.1837661840735, std: 0.0
+
+
+Média com Monte Carlo:
+algorithm = 'dijkstra'
+Compute time: mean: 0.17453848123550414, std: 0.09451468280030914
+Cost: mean: 79.8291972826411, std: 38.57096237576532
+
+algorithm = 'greedy'
+Compute time: mean: 0.007029647827148437, std: 0.00777161971070212
+Cost: mean: 103.34198082325912, std: 59.40972195676692
+
+algorithm = 'a_star'
+Compute time: mean: 0.045628578662872316, std: 0.04190992036938273
+Cost: mean: 79.8291972826411, std: 38.57096237576532
