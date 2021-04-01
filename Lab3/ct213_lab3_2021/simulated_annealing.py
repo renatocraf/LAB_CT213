@@ -25,5 +25,26 @@ def simulated_annealing(cost_function, random_neighbor, schedule, theta0, epsilo
     """
     theta = theta0
     history = [theta0]
+    custoTheta = cost_function(theta)
     # Todo: Implement Simulated Annealing
+    cont = 0
+    while not (custoTheta < epsilon or cont > max_iterations):
+        T = schedule(cont)
+        if T < 0.0:
+            return theta, history
+        neighbor = random_neighbor(theta)
+        custoNeighbor = cost_function(neighbor)
+        deltaE = custoTheta - custoNeighbor
+        if deltaE > 0:
+            history.append(neighbor)
+            custoTheta = custoNeighbor
+            theta = neighbor
+        else:
+            r = random.uniform(0.0, 1.0)
+            if r <= exp(deltaE / T):
+                history.append(neighbor)
+                custoTheta = custoNeighbor
+                theta = neighbor
+        cont += 1
+
     return theta, history

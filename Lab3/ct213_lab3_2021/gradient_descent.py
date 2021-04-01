@@ -1,4 +1,10 @@
-def gradient_descent(cost_function, gradient_function, theta0, alpha, epsilon, max_iterations):
+def gradient_descent(
+        cost_function,
+        gradient_function,
+        theta0,
+        alpha,
+        epsilon,
+        max_iterations):
     """
     Executes the Gradient Descent (GD) algorithm to minimize (optimize) a cost function.
 
@@ -22,4 +28,13 @@ def gradient_descent(cost_function, gradient_function, theta0, alpha, epsilon, m
     theta = theta0
     history = [theta0]
     # Todo: Implement Gradient Descent
+    custo = cost_function(theta)
+    cont = 0
+
+    while not (custo < epsilon or cont > max_iterations):
+        theta = theta - alpha * gradient_function(theta)
+        custo = cost_function(theta)
+        history.append(theta)
+        cont += 1
+
     return theta, history

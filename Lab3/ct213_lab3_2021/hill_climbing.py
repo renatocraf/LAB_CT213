@@ -23,4 +23,26 @@ def hill_climbing(cost_function, neighbors, theta0, epsilon, max_iterations):
     theta = theta0
     history = [theta0]
     # Todo: Implement Hill Climbing
+
+    custoTheta = cost_function(theta)
+    cont = 0
+
+    while not (custoTheta < epsilon or cont > max_iterations):
+        best = theta
+        Jbest = inf
+        #encontra o vizinho com menor custo
+        for neighbor in neighbors(theta):
+            Jneighbor = cost_function(neighbor)
+            if Jneighbor < Jbest:
+                best = neighbor
+                Jbest = Jneighbor
+        #se o custo do melhor vizinho for maior do que o custo do theta atual, finaliza
+        if Jbest > custoTheta:
+            return theta, history
+        theta = best
+        custoTheta = Jbest
+        history.append(theta)
+        cont += 1
+
+    print(history)
     return theta, history
