@@ -53,7 +53,5 @@ class SimpleEvolutionStrategy:
         self.C = xt @ x
         self.C = 1 /(self.mu) * self.C
 
-        for i in range(len(self.m)):
-            self.m[i] = np.mean(best_samples[i])
-
+        self.m = np.mean(best_samples, axis=0)
         self.samples = np.random.multivariate_normal(self.m, self.C, self.population_size)
