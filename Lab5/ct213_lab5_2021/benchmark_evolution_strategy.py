@@ -10,7 +10,7 @@ import cma
 num_trials = 200  # recommended for all other functions
 # num_iterations = 200  # recommended for schaffer2d
 num_iterations = 100  # recommended for all other functions
-function = translated_sphere  # translated_sphere, ackley, schaffer2d, rastrigin
+function = rastrigin  # translated_sphere, ackley, schaffer2d, rastrigin
 fig_format = 'png'  # 'svg' (Word), 'eps' (Latex), 'png' (best compatibility/worst quality)
 
 

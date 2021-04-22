@@ -51,7 +51,7 @@ class SimpleEvolutionStrategy:
         xt = x.transpose()
 
         self.C = xt @ x
-        self.C = 1 /(self.mu - 1) * self.C
+        self.C = 1 /(self.mu) * self.C
 
         for i in range(len(self.m)):
             self.m[i] = np.mean(best_samples[i])
