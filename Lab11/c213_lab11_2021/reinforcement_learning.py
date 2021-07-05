@@ -156,7 +156,4 @@ class QLearning(RLAlgorithm):
 
     def learn(self, state, action, reward, next_state, next_action):
         # Todo: implement
-        self.q[state][action] = self.q[state][action] + self.alpha * (
-                    reward + self.gamma * (self.q[next_state][next_action])-self.q[state][action])
-
-        pass
+        self.q[state][action] = self.q[state][action] + self.alpha * (reward + self.gamma * np.max(self.q[next_state])-self.q[state][action])
