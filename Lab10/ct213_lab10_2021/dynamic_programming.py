@@ -108,7 +108,6 @@ def policy_evaluation(grid_world, initial_value, policy, num_iterations=10000, e
         diff = np.max(np.absolute(diferencas))
 
         it += 1
-    print("diferença:",diff," it:",it)
     return value
 
 
